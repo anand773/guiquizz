@@ -1,26 +1,8 @@
 
 
-<<<<<<< HEAD
-    use quizdb;
-    INSERT INTO questions (catagory, question, answerok, ansopt1, ansopt2, ansopt3, ansopt4, ansopt5) values ("GK_Europe","What is the capital city of Australia?",         "Canberra","Sydeny","Melbourne","Amsterdam","Budapest","Amsterdam");
-    INSERT INTO questions (catagory, question, answerok, ansopt1, ansopt2, ansopt3, ansopt4, ansopt5) values ("GK_Europe","Which US state was Donald Trump born in?",       "New York","Los Angeles","Chicago","Philadelphia","Dallas","London");
-    #INSERT INTO questions (catagory, question, answerok, ansopt1, ansopt2, ansopt3, ansopt4, ansopt5) values ("GK_Europe","If you completed the Three Peaks challenge, which three UK mountains would you have climbed?",       "Ben Nevis, Snowdon, Scafell Pike","Ben Nevis, Cat Bells Pen y Fan","Ben Macdui,Pen y Ghent, Snowdon","Ben Macdui,Cat Bells ,Pen y Ghent","Ben Macdui, Snowdon, Scafell Pike","Ben Nevis, Cat Bells,Snowdon");
-    #INSERT INTO questions (catagory, question, answerok, ansopt1, ansopt2, ansopt3, ansopt4, ansopt5) values ("GK_Europe","Which UK city is situated further west – Bristol or Edinburgh?",         "Edinburgh","Birmingham","Nottingham","Manchester","City of Westminster","Cambridge");
-    #INSERT INTO questions (catagory, question, answerok, ansopt1, ansopt2, ansopt3, ansopt4, ansopt5) values ("GK_Europe","How many countries are there in the region of Europe? (Recognised by the United Nations)",       "44","10","72","12","7","5");
-    #INSERT INTO questions (catagory, question, answerok, ansopt1, ansopt2, ansopt3, ansopt4, ansopt5) values ("GK_Europe","What is the capital of Finland?",        "Helsinki","Vienna","San Marino","Podgorica","Prague ","Budapest");
-    #INSERT INTO questions (catagory, question, answerok, ansopt1, ansopt2, ansopt3, ansopt4, ansopt5) values ("GK_Europe","What is the currency of Vietnam?", "Vietnamese dong","Vietnamese dong","Euro","Vietnamese Dollar","Vietnamese Yen","Vietnamese Dinar");
-    #INSERT INTO questions (catagory, question, answerok, ansopt1, ansopt2, ansopt3, ansopt4, ansopt5) values ("GK_Europe","What language is spoken in Brazil?", "Portuguese","Spanish","Chineese","Urdu","Bengali","English");
-    
-    #INSERT INTO questions (catagory, question, answerok, ansopt1, ansopt2, ansopt3, ansopt4, ansopt5) values ("GK_Europe","What do the French call the English Channel?", "la Manche","The Louvre","Notre-Dame de Paris","Bouillabaisse","French Riviera","Les Miserables");
-    commit;
-    
-    
-    
-    
-    
-"
-=======
+use quizdb;
 -- Dumping structure for table quizdb.qpaper
+/**
 CREATE TABLE IF NOT EXISTS `qpaper` (
   `qpid` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `userno` int(11) NOT NULL DEFAULT 0,
@@ -40,12 +22,13 @@ CREATE TABLE IF NOT EXISTS `qpaper` (
   PRIMARY KEY (`qpid`) USING BTREE,
   UNIQUE KEY `u_usrdt` (`userno`,`qpdate`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='Random question selected from the question pool';
-
+*/
 -- Dumping data for table quizdb.qpaper: ~0 rows (approximately)
 /*!40000 ALTER TABLE `qpaper` DISABLE KEYS */;
 /*!40000 ALTER TABLE `qpaper` ENABLE KEYS */;
 
 -- Dumping structure for table quizdb.questions
+/*
 CREATE TABLE IF NOT EXISTS `questions` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `catagory` tinytext NOT NULL DEFAULT '' COMMENT 'question catagory',
@@ -59,6 +42,7 @@ CREATE TABLE IF NOT EXISTS `questions` (
   PRIMARY KEY (`id`),
   KEY `ID_question` (`question`(20)) USING BTREE
 ) ENGINE=InnoDB AUTO_INCREMENT=8206 DEFAULT CHARSET=utf8mb3 COMMENT='Question table with first correct and 5 options';
+*/
 
 -- Dumping data for table quizdb.questions: ~7,876 rows (approximately)
 /*!40000 ALTER TABLE `questions` DISABLE KEYS */;
@@ -8294,4 +8278,3 @@ INSERT IGNORE INTO `users` (`userno`, `username`, `usruid`, `pword`, `email`, `b
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
 /*!40014 SET FOREIGN_KEY_CHECKS=IF(@OLD_FOREIGN_KEY_CHECKS IS NULL, 1, @OLD_FOREIGN_KEY_CHECKS) */;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
->>>>>>> 7a05a18dc86a35fe4679fbdc77bc67a67f67bf8c
