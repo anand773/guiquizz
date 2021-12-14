@@ -27,6 +27,17 @@ $ pip2.6 install otherpackage
 $ pip2.7 install mybarpackage
 
 Check https://github.com/pypa/pip/pull/1053 for more details
+
+Tools for a programmer
+Having professional experience in development of various applications on different Web based Application and Client Server
+Application. Strong understanding of Spring,Spring LDAP, Spring Security, GWT(Google Web Tool), Ext- GWT,
+SOAP Technology (Apache Axis, Apache CXF RS,WS), Thrift, Java web Start,Hibernate, Ajax, Portal, Portlet, 
+Jersey Restful Services, Java OSGI Frame, Shibboleth Single Sing on Architecture, Core Java, Struts, Swing, and 
+J2EE Technologies like JSP, Servlet, JDBC and Java Beans, EJB (Both Sesssion and Entity Bean), Android Mobile Development, 
+Apache Kafka. Service Mesh, Microservice Architecture. Hybrid Mobile development using Ionic Frame work. 
+Sound knowledge of Front End Java frame work like Angular 6 and React. • Sound knowledge of integrating 
+SSO Circle Single Sign On, ADFS integration. 
+
 '''
 import tkinter as tk
 from tkinter import ttk ## ttk Theamed Tkinter widgets new widgets
