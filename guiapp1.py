@@ -54,7 +54,7 @@ try:
     connection = mysql.connector.connect(**connection_config_dict)
 
     if connection.is_connected():
-        global db_Info
+        ## global db_Info
         db_Info = connection.get_server_info()
         print("Connected to MySQL Server version ", db_Info)
         cursor = connection.cursor()
@@ -85,6 +85,54 @@ root.columnconfigure(1,weight=3) # 1th column width weigtage = 3 times of the co
 def btnlogin_clicked():
     print('btnlogin clicked')
     ## get the database and check the existance of the user
+    try:
+        connection_config_dict = {
+            'user': 'root',
+            'password': 'root1234',
+            'host': 'localhost',
+            'database': 'quizdb',
+            'raise_on_warnings': True,
+            'use_pure': False,
+            'autocommit': True,
+            'pool_size': 5
+        }
+        connection = mysql.connector.connect(**connection_config_dict)
+        """
+        *************************** 4. row ***************************
+        userno: 4
+        username: Ramesh Kumar
+        usruid: ramesh1995
+        pword: ramesh1234
+        email: ramesh@gmail.com
+        birthday: 1995-04-12
+        gender: M
+            role: U
+        """
+        #sql_select_Query = "select * from users"
+        cursor = connection.cursor()
+        #cursor.execute(sql_select_Query)
+        sql_select_Query = """select * from users where usruid = %s"""
+        # set variable in query
+        cursor.execute(sql_select_Query, (username_entry,))
+        # get all records
+        records = cursor.fetchall()
+        print("Total number of rows in table: ", cursor.rowcount)
+
+        print("\nPrinting each row")
+        for row in records:
+            print("Id = ", row[0], )
+            print("Name = ", row[1])
+            print("Price  = ", row[2])
+            print("Purchase date  = ", row[3], "\n")
+
+
+    except mysql.connector.Error as error:
+        print("Failed to create table in MySQL: {}".format(error))
+    finally:
+        if connection.is_connected():
+            cursor.close()
+            connection.close()
+            print("MySQL connection is closed")
 
 # populate the windows
 
