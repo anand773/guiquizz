@@ -1,5 +1,6 @@
 '''
     https://www.c-sharpcorner.com/article/creating-a-crudcreate-retrieveupdate-and-delete-desktop-application-using-pyt2/
+    https://pythonguides.com/python-tkinter-grid/
 '''
 
 import tkinter as tk  
@@ -18,7 +19,7 @@ connection_config_dict = {
     }
 db_connection = None
 ## ------------------------
-password = tk.StringVar() #Password variable
+
 
 def db_connect(): #{
     global connection_config_dict, db_connection
@@ -59,6 +60,7 @@ def db_select():#{
         print("Failed to create table in MySQL: {}".format(error))    
 
 #}
+
 root = tk.Tk()
 ## window design
 root.title="Login App"
@@ -75,11 +77,20 @@ tk.Label(
     text='Enter Password',
     #bg='#9FD996'
 ).grid(row=4, column=0)
-tk.Entry(root).grid(row=3, column=1)
-tk.Entry(root, textvariable=password, show='*').grid(row=4, column=1)
-
+userid = tk.Entry(root).grid(row=3, column=1)
+password = tk.StringVar() #Password variable
+userpass = tk.Entry(root, textvariable=password, show='*').grid(row=4, column=1)
+def btnlogin_clicked():#{
+    global userid, userpass
+    print("User id {} Password {}".format(userid.get(),userpass.get()))
+#}
+login_button = tk.Button(root, text="Login",command=btnlogin_clicked)
+login_button.grid(column=1, row=5, sticky=tk.E, padx=5, pady=5)
 
 #-----------------
+
+
+
 db_connect()
 db_select()
 if db_connection.is_connected():
